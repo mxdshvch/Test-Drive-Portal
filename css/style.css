@@ -1,0 +1,507 @@
+/* Основные стили в стиле Apple/MacOS */
+:root {
+    --dark-blue: #1d2d44;
+    --light-blue: #3e5c76;
+    --warning: #f8b400;
+    --success: #34c759;
+    --danger: #ff3b30;
+    --light-gray: #f5f5f7;
+    --medium-gray: #d2d2d7;
+    --dark-gray: #86868b;
+    --text-color: #1d1d1f;
+    --white: #ffffff;
+    --font-family: 'SF Pro Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --icon-color: #1d2d44; /* Новая переменная для цвета иконок */
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--light-gray);
+    color: var(--text-color);
+    line-height: 1.5;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Навигационная панель */
+.navbar {
+    padding: 0.75rem 1rem;
+}
+
+.bg-dark-blue {
+    background-color: var(--dark-blue);
+}
+
+img.logo {
+    max-width: 150px !important;
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+/* Кнопки */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #3a5a7c;
+    border-color: #3a5a7c;
+}
+
+.btn-primary:hover {
+    background-color: #2d4a6c;
+    border-color: #2d4a6c;
+}
+
+.btn-warning {
+    background-color: var(--warning);
+    border-color: var(--warning);
+    color: var(--dark-blue);
+}
+
+.btn-warning:hover, .btn-warning:focus {
+    background-color: #e0a400;
+    border-color: #e0a400;
+    color: var(--dark-blue);
+}
+
+.btn-success {
+    background-color: var(--success);
+    border-color: var(--success);
+}
+
+.btn-danger {
+    background-color: var(--danger);
+    border-color: var(--danger);
+}
+
+/* Стили для кнопок */
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+/* Карточки */
+.card {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.card-header {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--medium-gray);
+    font-weight: 600;
+    padding: 1rem 1.25rem;
+}
+
+/* Формы */
+.form-control {
+    border-radius: 8px;
+    border: 1px solid var(--medium-gray);
+    padding: 0.75rem 1rem;
+    font-size: 16px;
+}
+
+.form-control:focus {
+    border-color: var(--light-blue);
+    box-shadow: 0 0 0 3px rgba(62, 92, 118, 0.25);
+}
+
+.form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.form-text {
+    color: var(--dark-gray);
+}
+
+.invalid-feedback {
+    color: var(--danger);
+    font-size: 14px;
+}
+
+/* Таблицы */
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table th {
+    font-weight: 600;
+    background-color: var(--light-gray);
+}
+
+.table td, .table th {
+    padding: 0.75rem 1rem;
+    vertical-align: middle;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(245, 245, 247, 0.5);
+}
+
+/* Бейджи статусов */
+.badge {
+    padding: 0.5em 0.75em;
+    font-weight: 500;
+    border-radius: 6px;
+}
+
+.badge-pending {
+    background-color: var(--medium-gray);
+    color: var(--text-color);
+}
+
+.badge-approved {
+    background-color: var(--success);
+    color: var(--white);
+}
+
+.badge-completed {
+    background-color: var(--light-blue);
+    color: var(--white);
+}
+
+.badge-rejected {
+    background-color: var(--danger);
+    color: var(--white);
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.slide-up {
+    animation: slideUp 0.4s ease-out;
+}
+
+/* Адаптивность для мобильных устройств (390x844px) */
+@media (max-width: 576px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .card {
+        margin-bottom: 1rem;
+    }
+    
+    .table-responsive {
+        border-radius: 12px;
+        overflow: hidden;
+    }
+    
+    .btn {
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+/* Стили для вкладок */
+.nav-tabs {
+    border-bottom: 1px solid var(--medium-gray);
+}
+
+.nav-tabs .nav-link {
+    border: none;
+    color: var(--dark-gray);
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    margin-right: 1rem;
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--light-blue);
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--light-blue);
+    border-bottom: 2px solid var(--light-blue);
+    background-color: transparent;
+}
+
+/* Стили для модальных окон */
+.modal {
+    transition: opacity 0.3s ease;
+    position: fixed; /* Фиксированное позиционирование */
+    will-change: transform; /* Оптимизация для GPU */
+    backface-visibility: hidden; /* Предотвращает дерганье */
+    -webkit-backface-visibility: hidden;
+}
+
+.modal-dialog {
+    transform: none !important; /* Предотвращает трансформации, которые могут вызывать дерганье */
+    margin: 1.75rem auto; /* Фиксированный отступ */
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.modal-content {
+    border-radius: 12px;
+    border: none;
+    transition: transform 0.3s ease;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Тень для лучшего визуального эффекта */
+}
+
+.modal.show .modal-content {
+    transform: none !important; /* Предотвращает трансформации */
+}
+
+.modal-backdrop {
+    transition: opacity 0.3s ease;
+    position: fixed; /* Фиксированное позиционирование */
+    will-change: opacity;
+}
+
+.modal-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    padding: 0.75rem;
+}
+
+.modal-title {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: #1d2d44;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+/* Стили для выпадающего списка статусов */
+.form-select {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-select:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+/* Стили для поля причины отклонения */
+#rejection-reason-block {
+    margin-top: 1rem;
+}
+
+#rejection-reason-block .form-label {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+#rejection-reason-block .form-control {
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+/* Стили для чекбоксов и радио кнопок */
+.form-check-input {
+    width: 1.25em;
+    height: 1.25em;
+    margin-top: 0.25em;
+}
+
+.form-check-input:checked {
+    background-color: var(--light-blue);
+    border-color: var(--light-blue);
+}
+
+/* Стили для иконок в формах */
+.input-group-text {
+    background-color: #f8f9fa;
+}
+
+.input-group-text i {
+    width: 16px;
+    text-align: center;
+    color: var(--icon-color);
+}
+
+.form-label i {
+    color: var(--icon-color);
+}
+
+.form-check-label i {
+    color: var(--icon-color);
+}
+
+.btn i {
+    vertical-align: -0.125em;
+}
+
+.alert i {
+    vertical-align: -0.125em;
+    color: inherit;
+}
+
+.card-header i {
+    color: var(--icon-color);
+}
+
+/* Стили для валидации */
+.input-group .form-control.is-invalid {
+    border-color: #dc3545;
+    z-index: 0;
+}
+
+.invalid-feedback.d-block {
+    display: block !important;
+}
+
+/* Стили для карточек моделей */
+.car-model-card .card-title i {
+    color: var(--icon-color);
+}
+
+/* Стили для вкладок */
+.nav-tabs .nav-link i {
+    color: inherit;
+}
+
+/* Стили для кнопок */
+.btn-primary i {
+    color: #fff;
+}
+
+.btn-outline-dark i {
+    color: var(--icon-color);
+}
+
+.btn-outline-dark:hover i {
+    color: #fff;
+}
+
+.btn-warning i {
+    color: #212529;
+}
+
+/* Стили для таблиц */
+.table th i, 
+.table td i:not(.badge i) {
+    color: var(--icon-color);
+}
+
+/* Стили для иконок в футере */
+footer i {
+    color: var(--icon-color);
+}
+
+/* Стили для иконок в шапке */
+.navbar i:not(.btn i) {
+    color: var(--icon-color);
+}
+
+/* Стили для иконок в feature-card */
+.feature-icon i {
+    color: var(--icon-color);
+}
+
+/* Стили для иконок в testimonials */
+.rating i {
+    color: #ffc107; /* оставляем звезды желтыми */
+}
+
+/* Стили для иконок в пагинации */
+.pagination i {
+    color: inherit;
+}
+
+/* Стили для иконок в бейджах */
+.badge i {
+    color: inherit;
+}
+
+/* Стили для кнопок с состоянием загрузки */
+.btn .fa-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Стили для уведомлений */
+.notification-popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    min-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s ease;
+    transform: translateZ(0); /* Включаем аппаратное ускорение */
+    will-change: transform, opacity; /* Оптимизация для анимаций */
+    backface-visibility: hidden; /* Предотвращает дерганье */
+    -webkit-backface-visibility: hidden;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Предотвращает взаимодействие с уведомлением */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px) translateZ(0); }
+    to { opacity: 1; transform: translateY(0) translateZ(0); }
+}
+
+/* Предотвращение дерганья страницы при открытии модального окна */
+body.modal-open {
+    overflow: hidden;
+    padding-right: 0 !important; /* Предотвращает сдвиг контента */
+}
+
+/* Стили для чекбоксов и радио кнопок */
+.form-check-input {
+    width: 1.25em;
+    height: 1.25em;
+    margin-top: 0.25em;
+}
+
+.form-check-input:checked {
+    background-color: var(--light-blue);
+    border-color: var(--light-blue);
+} 
